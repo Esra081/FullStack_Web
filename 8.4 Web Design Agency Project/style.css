@@ -14,37 +14,87 @@ body {
 .main {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 400px 400px;
+  grid-template-rows: 80px auto auto;
+  grid-template-columns: auto auto auto;
   gap: 30px;
 }
 
-.main > left.card {
-  float: left;
-  width: 40%;
-  height: 200px;
-  grid-column: span 1;
+.main > .left.card {
+  grid-row: 3;
+  grid-column: 1;
 }
 
-.main > right.card {
-  float: right;
-  height: 200px;
-  grid-column: span 1;
+.main > .right.card {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.logo {
+  grid-row: 1;
+  grid-column: span 2;
+  height: 50px;
 }
 
 .tile-image {
   height: 200px;
   float: left;
+  margin-right: 20px;
 }
 
 
 h1 {
+  margin: 20px;
   font-size: 5rem;
+  grid-row: 2;
   grid-column: span 2;
 }
+
+
+
 
 footer {
   text-align: right;
   color: midnightblue;
 }
 
+
+@media (max-width: 800px) {
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 80px auto auto auto;
+    grid-template-columns: auto;
+    gap: 30px;
+  }
+
+  .main > .left.card {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  .main > .right.card {
+    grid-row: 4;
+    grid-column: 1;
+  }
+
+  .logo {
+    grid-row: 1;
+    grid-column: 1;
+    height: 50px;
+  } 
+
+  .tile-image {
+    height: 200px;
+    float: left;
+    margin-right: 20px;
+  }
+
+
+  h1 {
+    margin: 20px;
+    font-size: 5rem;
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+}
